@@ -1,0 +1,126 @@
+body{
+    margin-top: 0px;
+    background-image: url(../..//assets/image/background2.jpg);
+    background-size: cover;
+}
+/* #container1 {
+    width: 1200px; 
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    border: 1px solid #58B5E9;
+    
+
+} */
+img{
+position: absolute;
+width: 47px;
+height: 52px;
+/* left: 194px;
+top: 140px; */
+
+/* background: url(image.png); */
+}
+
+.frame h2{
+    
+        /* position: absolute; */
+        width: 218px;
+        height: 33px;
+        left: 241px;
+        top: 150px;
+        font-family: Sansita One;
+        font-style: normal;
+        /* font-weight: normal; */
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 247, 247, 0.815);
+        /* opacity: 0.6; */
+        float: left;
+        margin-left: 50px;
+}
+.frame h1{
+    /* position: absolute; */
+    width: 250px;
+    height: 47px;
+    left: 316px;
+    top: 241px;
+
+    font-family: Prata;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 49px;
+
+    color: #000000;
+
+    /* border: 1px solid # */
+    margin-left: 80px;
+}
+
+.frame{
+    /* width: 498px;  */
+    height: 500px;
+    /* border: 1px solid red; */
+    /* float: left; */
+
+}
+.frame1{
+    /* width: 498px; */
+    height: 70px;
+    margin-left: 30px;
+    margin-top: 10px;
+    /* border: 1px solid saddlebrown; */
+}
+#demotext {
+    color: #333333;
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+    color: #333333;
+    background: #FFFFFF;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 300px;
+    }
+.frame1 h2{
+   margin-top: 20px;
+}
+.lb-group-login{
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.bth-login{
+    margin-left:120px;
+    margin-top: 20px;
+    
+}
+.col-auto{
+    margin-bottom: 20px;
+}
+.login{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 400px;
+    border-radius: 10px 10px 10px 10px;
+}
+.form-group-login{
+    width: 300px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.img-login{
+    
+        opacity: 0.8;
+    
+width: 329px;
+height: 232px;
+
+
+}
