@@ -114,7 +114,7 @@ height:200px;
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: white ; font-size: 18px ;padding-top: 40px; padding-right: 30px; padding-left: 30px; ">Chấm công <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#" style="font-size:16px;">Chấm công</a></li>
+            <li><a href="/chamcongnhanvien/backend/chamcong/create.php" style="font-size:16px;">Chấm công</a></li>
             <li><a href="#" style="font-size:16px;">Xem chấm công</a></li>
           </ul>
         </li>
