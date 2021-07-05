@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +19,9 @@
     <div class="frame">
         <div class="frame1">
             <img src="../ChamcongNhanvien/assets/image/logo-company.png" alt="logo">
-            <h2>COMPANY</h2>
+            <h2>COMPANY</h2> 
         </div>
+        
     <!-- End Title -->
     
     <!--Form Log In  -->
@@ -30,7 +32,7 @@
                 </div>
 
             </div>
-            <form method="" action="" class="form-group-login">
+            <form method="post" action="" class="form-group-login">
 
                 <div class="col-auto">
                     <label class="lb-group-login" for="inlineFormInputGroup-user">Username</label>
@@ -39,7 +41,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="far fa-user fa-1.5x"></i> </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup-user" placeholder="Username">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                     </div>
                 </div>
                 <div class="col-auto">
@@ -48,17 +50,17 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-lock fa-1.5px"></i> </div>
                         </div>
-                        <input type="password" class="form-control" id="inlineFormInputGroup-password"
+                        <input type="password" class="form-control" id="password" name="password"
                             placeholder="Password">
                     </div>
                 </div>
-                <button type="button" class="bth-login btn btn-primary" id="bth-login">Log In</button>
+                <button type="submit" class="bth-login btn btn-primary" id="bth-login" name="login">Log In</button>
             </form>
         </div>
         <!-- End Form Log In -->
     </div>
 
-    <script src="vendor/jquery-3.6.0.js"></script>
+    <script src="../ChamcongNhanvien/vendor/jquery-3.6.0.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
