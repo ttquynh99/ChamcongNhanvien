@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm chấm công</title>
+    <title>Xem chấm công</title>
     <link rel="stylesheet" href="/chamcongnhanvien/assets/css/style1.css" type="text/css" />
 </head>
 <body>
@@ -58,30 +58,49 @@
                     );
                 }
                 /* --- End Truy vấn dữ liệu  --- */
+
+
+
+
+                /* 
+                    2.Truy vấn dữ liệu Chấm công
+                */
+                // Chuẩn bị câu truy vấn
+                $chamcong = "select * from chitietchamcong";
+                // Thực thi câu truy vấn SQL để lấy về dữ liệu
+                $resultchamcong = mysqli_query($conn, $chamcong);
+                $datachamcong = [];
+                while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                    $datachamcong[] = array(
+                        'ID' => $row['ID'],
+                        'Ngay' => $row['Ngay'],
+                        'Gio' => $row['Gio'],
+                        'TrangThai' => $row['TrangThai'],
+                        'ID_NV' => $row['ID_NV'],
+                        'ID_Calam' => $row['ID_Calam']
+
+                    );
+                }
+                /* --- End Truy vấn dữ liệu  --- */
             ?>
 
 
-<h2>THÊM CHẤM CÔNG</h2>
+<h2>XEM CHI TIẾT CHẤM CÔNG</h2>
 <form name="frmchamcong" id="frmchamcong" method="post" action="">
     <div class="ngay"  >
-        Ngày:           
+        Chọn Ngày:           
         <input class="bday" type="date" name="Ngay" id="Ngay">
     </div>
-    <div class="ca">
-  <label for="cars">Ca làm : </label>
-  <select name="calam" id="calam" class="cars">
-  <?php foreach ($dataCalam as $calam) : ?>
-    <option value = "<?= $calam['ID'] ?>"><?= $calam['Calam'] ?></option>
-    <?php endforeach; ?>
-  </select>
-</div>
 
 <table class="table">
 <tr>
     <th width="150" height="40" style = "text-align: center">STT</th>
     <th width="800" height="40" style = "text-align: center">Họ tên</th>
     <th width="800" height="40" style = "text-align: center">Trạng thái</th>
+    <th width="800" height="40" style = "text-align: center">Lý do</th>
     <th width="500" height="40" style = "text-align: center">Giờ vào làm</th>
+    <th width="800" height="40" style = "text-align: center">Ca làm</th>
+    <th width="800" height="40" style = "text-align: center">Chỉnh sửa</th>
 </tr>
 <tr>
 <td> 
@@ -99,51 +118,31 @@
     </div>
 </td>
 <td style = "text-align: left">
-<div class="radio" id="TrangThai">
-  <label class="rdon"><input type="radio" name="TrangThai" id="on" value="on" checked>On</label> 
-  <label class="rdoff" ><input type="radio" name="TrangThai" id="off"  value="off">Off</label>
-    <div> 
-    <p> Lý do : <input type="text" id="LyDo" name="LyDo"></p>
-    </div>
-    
+    <div  id="TrangThai">
+        <?php foreach ($datachamcong as $chamcong) : ?> 
+            <input type="text"  value="<?= $chamcong['ID'] ?>" > <?= $chamcong['TrangThai'] ?>
+        <?php endforeach; ?>
 </div>
+<td>
+    <?php foreach ($datachamcong as $chamcong) : ?> 
+        <input type="text"  value="<?= $chamcong['ID'] ?>" > <?= $chamcong['LyDo'] ?>
+    <?php endforeach; ?>
+</td>
     
 </td>
 <td style = "text-align: center">
     <input type="time" name="Gio" id="Gio" class="time">
 
 </td>
+<td></td>
+<td><button class="btn btn-warning" name="btnEdit">Sửa</button></td>
 </tr>
 
 </table>
 
-<button class="btn" name="btnSave" style="margin-left : 45% ; background: linear-gradient(180deg, #FFFFFF 17.86%, rgba(255, 255, 255, 0) 117.86%),
-linear-gradient(0deg, #1BC5EB, #1BC5EB);">Thêm</button>
+<button class="btn" name="btnSee" style="margin-left : 45% ; background: linear-gradient(180deg, #FFFFFF 17.86%, rgba(255, 255, 255, 0) 117.86%),
+linear-gradient(0deg, #1BC5EB, #1BC5EB);">Xem chi tiết</button>
 </form>
-
-
-
-<?php
-                if (isset($_POST['btnSave'])) {
-                    // Lấy dữ liệu người dùng hiệu chỉnh gởi từ REQUEST POST
-                    $gio = $_POST['Gio'];
-                    $trangthai =$_POST['TrangThai'];
-                    $ngay = $_POST['Ngay'];
-                    $lydo = $_POST['LyDo'];
-                    $nv = $_POST['NV'];
-                    $calam = $_POST['calam'];
-                    // Câu lệnh INSERT
-                    $sql = "INSERT INTO `chitietchamcong` (Ngay, Gio, TrangThai, LyDo, ID_NV, ID_Calam) VALUES ('$ngay', '$gio','$trangthai', '$lydo', '$nv', '$calam');";
-                    // Thực thi INSERT
-                    mysqli_query($conn, $sql);
-                    // Đóng kết nối
-                    mysqli_close($conn);
-                    // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-                    // echo "<script>location.href = 'index.php';</script>";
-                    // var_dump($sql);
-                }
-                ?>
-
 
 
 
